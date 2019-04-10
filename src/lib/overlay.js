@@ -1,12 +1,13 @@
 import React from "react";
-import "./overlayStyle.css";
 
 import ReactLoading from "react-loading";
 
 const Overlay = props => {
   const styles = {
     overlayContainer: {
-      position: "relative"
+      position: "relative",
+      width: "100%",
+      height: "100%"
     },
 
     overlay: {
@@ -25,13 +26,19 @@ const Overlay = props => {
   };
 
   return (
-    <div style={styles.overlayContainer}>
-      {props.children}
-      <div style={styles.overlay}>
-        {props.overlayData}
-        {props.loading ? <ReactLoading {...props.loadingStyle} /> : null}
-      </div>
-    </div>
+    <>
+      {!props.disabled ? (
+        <div style={styles.overlayContainer}>
+          {props.children}
+          <div style={styles.overlay}>
+            {props.overlayData}
+            {props.loading ? <ReactLoading {...props.loadingStyle} /> : null}
+          </div>
+        </div>
+      ) : (
+        props.children
+      )}
+    </>
   );
 };
 

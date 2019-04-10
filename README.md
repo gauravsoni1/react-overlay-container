@@ -80,6 +80,23 @@ const CustomComponent = () => {
 </Overlay>
 ```
 
+###### Disable/Enable Overlay
+
+Useful when you want to programmatically enable / disable the Overlay, use state to manipulate the disabled propertly 
+example: `disabled:{this.state.isOverlayDisabled}`
+
+```javascript
+<Overlay
+   loading={true}
+   disabled
+   loadingStyle={{ type: "bars", color: "green" }}
+ >
+  <h1 style={{ height: "200px" }}>This is my loading tag</h1>
+</Overlay>
+```
+
+
+
 #### Props options
 
 Props | Type
@@ -88,3 +105,4 @@ loading | < Boolean > (default false)
 loadingStyle | < Object >
 overlayData | < JSX >
 customStyle | < Object >
+disabled | < Boolean > (default false)
