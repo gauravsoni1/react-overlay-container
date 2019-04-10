@@ -1,12 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Overlay } from "./lib";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const CustomComponent = () => {
+  return <div>Custom component to show on the overlay</div>;
+};
+
+ReactDOM.render(
+  <>
+    <Overlay
+      loading={true}
+      loadingStyle={{ type: "bars", color: "green" }}
+      overlayData={<CustomComponent/>}
+      customStyle={{ backgroundColor: "rgba(211,231,22,0.6)" }}
+    >
+      <h1 style={{ height: "200px" }}>I am loading some data here from server</h1>
+    </Overlay>
+  </>,
+  document.getElementById("root")
+);

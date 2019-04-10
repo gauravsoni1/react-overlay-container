@@ -1,0 +1,16 @@
+.overlay-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(135, 134, 134, 0.838);
+  height: 100%;
+  width: 100%;
+}
